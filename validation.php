@@ -1,13 +1,15 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: jsas2
+ * User:Jessica Sas
  * Date: 1/7/2019
- * Time: 5:11 PM
+ * validation.php
+ * This form validates my cupckae.php form and displays a summary of order.
  */
+
 $validFlavors= ["grasshopper","maple","carrot"];
 $isValid= true;
-define("COST", 3.5);
+define("COST", 3.50);
+
 //check if name exists
 if (empty($_GET['name']))
 {
@@ -30,10 +32,11 @@ else
     $selectedFlavors = $_GET['flavors'];
     foreach ($selectedFlavors as $selected)
     {
+        //check for form spoofing
         if (!in_array($selected, $validFlavors))
         {
             $isValid = false;
-            echo 'Not a valid Flavor';
+            echo 'Not a valid flavor';
         }
         else
         {

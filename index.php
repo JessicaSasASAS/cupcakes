@@ -1,4 +1,9 @@
 <?php
+/*
+ * Jessica Sas
+ * cupcakes.php
+ * This file contains a form allowing a customer to choose from a list of cupcakes.
+ */
 //turn on error reporting
 ini_set ('display_errors', 1);
 error_reporting(E_ALL);
