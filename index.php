@@ -1,3 +1,9 @@
+<?php
+//turn on error reporting
+ini_set ('display_errors', 1);
+error_reporting(E_ALL);
+$cupcakes= ["grasshopper"=> "The Grasshopper","maple"=> "Whiskey Maple Bacon", "carrot"=> "Carrot Walnut"];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +13,16 @@
 <body>
 <h1>Cupcakes!</h1>
 <form>
+    <input type="text" name="name" value="Your Name">
     <fieldset>
         <legend>Flavors:</legend>
-        <input type="checkbox" name="flavor1" value="Vanilla"> Vanilla<br>
-        <input type="checkbox" name="flavor2" value="Chocolate"> Chocolate<br>
-        <input type="checkbox" name="flavor3" value="Carrot Cake"> Carrot Cake<br>
+        <?php
+        foreach($cupcakes as $flavor => $flavor_dets)
+        {
+            echo "<input type ='checkbox' name ='flavors' value = '$flavor'>$flavor_dets";
+            echo '<br>';
+        }
+        ?>
     </fieldset>
     <input type="button" value="Submit Order">
 </form>
