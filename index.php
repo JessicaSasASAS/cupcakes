@@ -5,6 +5,8 @@ error_reporting(E_ALL);
 //cupcake array
 $cupcakes= ["grasshopper"=> "The Grasshopper","maple"=> "Whiskey Maple Bacon", "carrot"=> "Carrot Walnut"];
 $name="";
+$isChecked="";
+
 //validate input
 if (!empty($_GET))
 {
@@ -26,7 +28,7 @@ if (!empty($_GET))
         <?php
         foreach($cupcakes as $flavor => $flavor_dets)
         {
-            echo "<input type ='checkbox' name ='flavors[]' value = '$flavor'>$flavor_dets";
+            echo "<input type ='checkbox' name ='flavors[]' value = '$flavor' $isChecked >$flavor_dets";
             echo '<br>';
         }
         ?>

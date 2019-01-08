@@ -7,6 +7,7 @@
  */
 $validFlavors= ["grasshopper","maple","carrot"];
 $isValid= true;
+define("COST", 3.5);
 //check if name exists
 if (empty($_GET['name']))
 {
@@ -34,5 +35,21 @@ else
             $isValid = false;
             echo 'Not a valid Flavor';
         }
+        else
+        {
+            $isChecked= "checked";
+        }
     }
+}
+
+if($isValid)
+{
+    //print summary
+    echo "<p>Thank you, $name, for your order!</p>";
+    echo "<p>Order Summary:</p>";
+    echo '<ul><li>';
+    echo implode("</li><li>", $selectedFlavors);
+    echo '</li></ul>';
+    echo 'Order Total: $'. sizeOf($selectedFlavors)* COST;
+    exit;
 }
